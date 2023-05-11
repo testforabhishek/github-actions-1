@@ -1,15 +1,15 @@
-name: "Issue Labeler"
+name: "Label Issues"
 on:
   issues:
     types: [opened, edited]
 
 jobs:
-  triage:
+  label:
     runs-on: ubuntu-latest
     steps:
-      - uses: github/issue-labeler@v3.1 #May not be the latest version
+      - uses: github/issue-labeler@v3.0
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          configuration-path: .github/labeler.yml
+          configuration-path: .github/labels.yml
           enable-versioned-regex: 0
-          include-title: 1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          sync-labels: 1
