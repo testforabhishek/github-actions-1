@@ -1,7 +1,7 @@
 name: "GreetContributor"
 on:
   issue:
-    types: [opened, edited]
+    types: [created, edited]
 
 jobs:
   GreetCommitter:
